@@ -1,0 +1,10 @@
+{
+    "name": "SQL-GPT",
+    "description": "Enanche LLMs with Database data",
+    "author_name": "Gianfranco Demarco",
+    "author_url": "https://cheshirecat.ai",
+    "plugin_url": "https://github.com/cheshire-cat-ai/core",
+    "tags": "core, default, cat",
+    "thumb": "",
+    "version": "0.0.1"
+}
