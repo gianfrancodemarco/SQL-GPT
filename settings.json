@@ -1,3 +1,4 @@
 {
-    "db_uri": "postgresql://postgres:postgres@172.17.0.1:10000/postgres"
+    "db_uri": "sqlite:///test.db",
+    "test_db": true
 }
