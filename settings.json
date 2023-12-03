@@ -1,4 +1,0 @@
-{
-    "db_uri": "sqlite:///test.db",
-    "test_db": true
-}

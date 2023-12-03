@@ -2,7 +2,6 @@ from cat.plugins.sql_gpt.database.database_manager import DatabaseManager
 from abc import ABC, abstractmethod
 from typing import List, Dict
 import json
-from cat.looking_glass.cheshire_cat import CheshireCat
 
 
 class Solver(ABC):
@@ -96,33 +95,3 @@ class Solver(ABC):
             result = self.database_manager.execute_query(query["query"])
             db_augmented_context += f"{query['description']} {result}\n"
         return db_augmented_context
-
-
-class CatSolver(Solver):
-
-    def __init__(
-        self,
-        cat: CheshireCat
-    ) -> None:
-        self.cat = cat
-
-    def ask_llm(
-        self,
-        user_message: str,
-        prefix: str,
-        suffix: str,
-    ):
-        agent_input = {
-            "input": user_message,
-            "episodic_memories": [],
-            "declarative_memory": "",
-            "chat_history": ""
-        }
-
-        cat_message = self.cat.agent_manager.execute_memory_chain(
-            agent_input=agent_input,
-            prompt_prefix=prefix,
-            prompt_suffix=suffix,
-            working_memory=""
-        )
-        return cat_message
